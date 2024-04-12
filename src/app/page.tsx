@@ -2,6 +2,11 @@
 import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const thousands_separators = (num) => {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  };
 
   const [state, setState] = useState({
     loading: true,
@@ -138,18 +143,21 @@ export default function Home() {
     <thead>
       <tr>
         
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>STATES/UT</th>
+        <th>CONFIRMED</th>
+        <th>ACTIVE</th>
+        <th>RECOVERED</th>
+        <th>DEATHS</th>
       </tr>
     </thead>
     <tbody>
       {state.status.map((stat)=>(
         <tr className="hover">
-       
-        <td>{stat.confirmed}</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
+        <td>{stat.state}</td>
+        <td>{thousands_separators(stat.confirmed)}</td>
+        <td>{thousands_separators(stat.active)}</td>
+        <td>{thousands_separators(stat.recovered)}</td>
+        <td>{thousands_separators(stat.deaths)}</td>
       </tr>
       ))}
       {/* <tr>
