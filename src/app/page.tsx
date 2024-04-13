@@ -51,7 +51,7 @@ export default function Home() {
       });
   }, []);
 
-  console.log(state)
+  // console.log(state)
   
   return (
     <>
@@ -137,8 +137,9 @@ export default function Home() {
       </div>
 
       <div>
+        {state.open?(
       <div className="overflow-x-auto">
-  <table className="table">
+       <table className="table">
     {/* head */}
     <thead>
       <tr>
@@ -182,8 +183,9 @@ export default function Home() {
       </tr> */}
     </tbody>
   </table>
-</div>
+</div> ):(<span className="loading loading-spinner loading-lg"></span>)}
       </div>
+   
     </>
   );
 }
