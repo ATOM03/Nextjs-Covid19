@@ -2,13 +2,13 @@
 import { useState, useEffect } from 'react'
 
 export default function Home() {
-  const thousands_separators = (num) => {
+  const thousands_separators = (num:any) => {
     var num_parts = num.toString().split(".");
     num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return num_parts.join(".");
   };
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     loading: true,
     status: [],
     confirmed: "",
@@ -152,7 +152,7 @@ export default function Home() {
       </tr>
     </thead>
     <tbody>
-      {state.status.map((stat)=>(
+      {state.status.map((stat:any)=>(
         <tr className="hover">
         <td>{stat.state}</td>
         <td>{thousands_separators(stat.confirmed)}</td>
