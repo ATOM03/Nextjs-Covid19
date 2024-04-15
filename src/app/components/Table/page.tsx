@@ -23,7 +23,7 @@ export default function Table(props: any) {
         </thead>
         <tbody>
           {status.map((stat: any, index: any) => (
-            <tr className="hover" key={index}>
+            <tr key={index} className="hover">
               <td>{stat.state}</td>
               <td>{thousands_separators(stat.confirmed)}</td>
               <td>{thousands_separators(stat.active)}</td>

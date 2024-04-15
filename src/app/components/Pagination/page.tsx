@@ -15,7 +15,7 @@ const Pagination = (props: any) => {
     <div className="flex justify-center mt-4">
       {pages.map((page, index) => {
         return (
-          <div className="join" key={index}>
+          <div key={index} className="join">
             <button
               onClick={() => setCurrentPage(page)}
               className={
