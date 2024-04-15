@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Table from "./components/Table/page";
 import Navbar from "./components/Navbar/page";
+import Pagination from "./components/Pagination/page";
 
 export default function Home() {
   const thousands_separators = (num: any) => {
@@ -23,6 +24,9 @@ export default function Home() {
     case_time: [],
     open: false,
   });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8);
 
   const [openSucess, setOpenSucess] = useState(false);
   const [openError, setOpenError] = useState(false);
@@ -53,6 +57,10 @@ export default function Home() {
       });
   }, []);
 
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = state.status.slice(firstPostIndex, lastPostIndex);
+
   // console.log(state)
 
   return (
@@ -60,7 +68,15 @@ export default function Home() {
       <Navbar />
       <div>
         {state.open ? (
-          <Table status={state.status} />
+          <div>
+            <Table status={currentPosts} />
+            <Pagination
+              totalPosts={state.status.length}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </div>
         ) : (
           <span className="loading loading-spinner loading-lg"></span>
         )}
