@@ -22,8 +22,8 @@ export default function Table(props: any) {
           </tr>
         </thead>
         <tbody>
-          {status.map((stat: any) => (
-            <tr className="hover">
+          {status.map((stat: any, index: any) => (
+            <tr className="hover" key={index}>
               <td>{stat.state}</td>
               <td>{thousands_separators(stat.confirmed)}</td>
               <td>{thousands_separators(stat.active)}</td>
