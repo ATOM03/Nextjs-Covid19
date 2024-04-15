@@ -1,5 +1,7 @@
 "use client";
 
+import { Key } from "react";
+
 export default function Table(props: any) {
   const thousands_separators = (num: any) => {
     var num_parts = num.toString().split(".");
@@ -8,6 +10,7 @@ export default function Table(props: any) {
   };
 
   const status = props.status;
+  console.log(status);
 
   return (
     <div className="overflow-x-auto">
@@ -22,7 +25,7 @@ export default function Table(props: any) {
           </tr>
         </thead>
         <tbody>
-          {status.map((stat: any, index: any) => (
+          {status.map((stat: any, index: Key) => (
             <tr key={index} className="hover">
               <td>{stat.state}</td>
               <td>{thousands_separators(stat.confirmed)}</td>
