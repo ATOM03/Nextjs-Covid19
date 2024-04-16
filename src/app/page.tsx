@@ -32,7 +32,7 @@ export default function Home() {
   const [openError, setOpenError] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api")
+    fetch("/api")
       .then((res) => res.json())
       .then((json) => {
         setState({
