@@ -25,15 +25,16 @@ export default function Table(props: any) {
           </tr>
         </thead>
         <tbody>
-          {status.map((stat: any, index: Key) => (
-            <tr key={index} className="hover">
-              <td>{stat.state}</td>
-              <td>{thousands_separators(stat.confirmed)}</td>
-              <td>{thousands_separators(stat.active)}</td>
-              <td>{thousands_separators(stat.recovered)}</td>
-              <td>{thousands_separators(stat.deaths)}</td>
-            </tr>
-          ))}
+          {status &&
+            status?.map((stat: any, index: Key) => (
+              <tr key={index} className="hover">
+                <td>{stat.state}</td>
+                <td>{thousands_separators(stat.confirmed)}</td>
+                <td>{thousands_separators(stat.active)}</td>
+                <td>{thousands_separators(stat.recovered)}</td>
+                <td>{thousands_separators(stat.deaths)}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
