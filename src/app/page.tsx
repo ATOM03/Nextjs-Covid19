@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Table from "./components/Table/page";
 import Navbar from "./components/Navbar/page";
 import Pagination from "./components/Pagination/page";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 export default function Home() {
   const thousands_separators = (num: any) => {
@@ -31,6 +33,23 @@ export default function Home() {
   const [openSucess, setOpenSucess] = useState(false);
   const [openError, setOpenError] = useState(false);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
@@ -49,6 +68,7 @@ export default function Home() {
           open: true,
         });
         setOpenSucess(true);
+        setOpen(true);
       })
       .catch((e) => {
         console.log(e);
@@ -81,6 +101,17 @@ export default function Home() {
           <span className="loading loading-spinner loading-lg"></span>
         )}
       </div>
+
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          Data Fetch Successfully
+        </Alert>
+      </Snackbar>
     </>
   );
 }
