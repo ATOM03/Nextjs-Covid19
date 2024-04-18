@@ -10,7 +10,6 @@ export default function Table(props: any) {
   };
 
   const status = props.status;
-  console.log(status);
 
   return (
     <div className="overflow-x-auto">
