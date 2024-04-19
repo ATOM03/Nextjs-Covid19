@@ -7,12 +7,6 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
 export default function Home() {
-  const thousands_separators = (num: any) => {
-    var num_parts = num.toString().split(".");
-    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return num_parts.join(".");
-  };
-
   const [state, setState] = useState<any>({
     loading: true,
     status: [],
@@ -29,9 +23,6 @@ export default function Home() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(8);
-
-  const [openSucess, setOpenSucess] = useState(false);
-  const [openError, setOpenError] = useState(false);
 
   const [open, setOpen] = useState(false);
 
@@ -67,13 +58,11 @@ export default function Home() {
           case_time: json.cases_time_series,
           open: true,
         });
-        setOpenSucess(true);
         setOpen(true);
       })
       .catch((e) => {
         console.log(e);
         setState({ ...state, loading: false });
-        setOpenError(false);
       });
   }, []);
 
@@ -98,7 +87,9 @@ export default function Home() {
             />
           </div>
         ) : (
-          <span className="loading loading-spinner loading-lg"></span>
+          <div className="flex justify-center w-full h-[60rem]">
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
         )}
       </div>
 
