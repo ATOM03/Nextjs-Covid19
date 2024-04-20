@@ -20,7 +20,7 @@ const Pagination = (props: any) => {
               onClick={() => setCurrentPage(page)}
               className={
                 page == currentPage
-                  ? "join-item btn btn-active"
+                  ? "join-item btn  btn-primary"
                   : "join-item btn"
               }
             >
