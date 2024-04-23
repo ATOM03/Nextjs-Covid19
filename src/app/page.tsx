@@ -67,14 +67,17 @@ export default function Home() {
       <Navbar />
       <div>
         {state.open ? (
-          <div>
-            <Table status={currentPosts} />
-            <Pagination
-              totalPosts={state.status.length}
-              postsPerPage={postsPerPage}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-            />
+          <div className="flex flex-col items-center  shadow md:flex-row md:max-w-xl">
+            <div>
+              <Table status={currentPosts} />
+              <Pagination
+                totalPosts={state.status.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            </div>
+            <div>Chart</div>
           </div>
         ) : (
           <div className="flex justify-center w-full h-[60rem]">
