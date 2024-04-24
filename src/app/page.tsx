@@ -8,12 +8,13 @@ import Alert from "@mui/material/Alert";
 import { useRecoilState } from "recoil";
 import { CovidState } from "./components/State/atoms/CovidState";
 import Chart from "./components/Chart/page";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [state, setState] = useRecoilState(CovidState);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(8);
+  const [postsPerPage, setPostsPerPage] = useState(15);
 
   const [open, setOpen] = useState(false);
 
@@ -68,20 +69,27 @@ export default function Home() {
       <Navbar />
       <div className="w-screen">
         {state.open ? (
-          <div className="w-full flex flex-col items-center md:flex-row ">
-            <div className="w-full md:w-1/2">
-              <Table status={currentPosts} />
-              <Pagination
-                totalPosts={state.status.length}
-                postsPerPage={postsPerPage}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-              />
+          <motion.div
+            // animate={{ x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ease: "easeOut", duration: 1 }}
+          >
+            <div className="w-full flex flex-col items-center md:flex-row ">
+              <div className="w-full md:w-1/2">
+                <Table status={currentPosts} />
+                <Pagination
+                  totalPosts={state.status.length}
+                  postsPerPage={postsPerPage}
+                  setCurrentPage={setCurrentPage}
+                  currentPage={currentPage}
+                />
+              </div>
+              <div className="w-full p-4 md:w-1/2">
+                <Chart chartdata={state.case_time} />
+              </div>
             </div>
-            <div className="w-full p-4 md:w-1/2">
-              <Chart chartdata={state.case_time} />
-            </div>
-          </div>
+          </motion.div>
         ) : (
           <div className="flex justify-center w-full h-[60rem]">
             <span className="loading loading-spinner loading-lg"></span>
