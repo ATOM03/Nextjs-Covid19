@@ -7,6 +7,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useRecoilState } from "recoil";
 import { CovidState } from "./components/State/atoms/CovidState";
+import Chart from "./components/Chart/page";
 
 export default function Home() {
   const [state, setState] = useRecoilState(CovidState);
@@ -67,7 +68,7 @@ export default function Home() {
       <Navbar />
       <div>
         {state.open ? (
-          <div className="flex flex-col items-center  shadow md:flex-row md:max-w-xl">
+          <div className="flex flex-col items-center md:flex-row md:max-w-xl">
             <div>
               <Table status={currentPosts} />
               <Pagination
@@ -77,7 +78,9 @@ export default function Home() {
                 currentPage={currentPage}
               />
             </div>
-            <div>Chart</div>
+            <div>
+              <Chart chartdata={state.case_time} />
+            </div>
           </div>
         ) : (
           <div className="flex justify-center w-full h-[60rem]">
