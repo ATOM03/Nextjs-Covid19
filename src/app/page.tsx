@@ -66,10 +66,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="w-screen">
         {state.open ? (
-          <div className="flex flex-col items-center md:flex-row md:max-w-xl">
-            <div>
+          <div className="w-full flex flex-col items-center md:flex-row ">
+            <div className="w-full md:w-1/2">
               <Table status={currentPosts} />
               <Pagination
                 totalPosts={state.status.length}
@@ -78,7 +78,7 @@ export default function Home() {
                 currentPage={currentPage}
               />
             </div>
-            <div>
+            <div className="w-full p-4 md:w-1/2">
               <Chart chartdata={state.case_time} />
             </div>
           </div>

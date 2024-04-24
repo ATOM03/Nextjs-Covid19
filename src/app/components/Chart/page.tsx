@@ -41,20 +41,20 @@ export default function Chart(props: any) {
     };
 
     let chartData = chartdata;
-    for (let i = 10; i < chartData.length; i += 2) {
+    for (let i = 10; i < chartData?.length; i += 2) {
       let chart = chartData[i];
-      data.confirmedCase.labels.push(chart.date);
-      data.activeCase.labels.push(chart.date);
-      data.recoveredCase.labels.push(chart.date);
-      data.deathCase.labels.push(chart.date);
-      totalConfimed.data.push(chart.totalconfirmed);
-      totalDeaths.data.push(chart.totaldeceased);
-      totalRecovered.data.push(chart.totalrecovered);
+      data.confirmedCase.labels.push(chart.date as never);
+      data.activeCase.labels.push(chart.date as never);
+      data.recoveredCase.labels.push(chart.date as never);
+      data.deathCase.labels.push(chart.date as never);
+      totalConfimed.data.push(chart.totalconfirmed as never);
+      totalDeaths.data.push(chart.totaldeceased as never);
+      totalRecovered.data.push(chart.totalrecovered as never);
     }
 
-    data.confirmedCase.datasets.push(totalConfimed);
-    data.recoveredCase.datasets.push(totalDeaths);
-    data.deathCase.datasets.push(totalRecovered);
+    data.confirmedCase.datasets.push(totalConfimed as never);
+    data.recoveredCase.datasets.push(totalDeaths as never);
+    data.deathCase.datasets.push(totalRecovered as never);
 
     console.log(data);
     return data;
@@ -69,23 +69,23 @@ export default function Chart(props: any) {
         data={data.confirmedCase}
         options={{
           responsive: true,
-          layout: {
-            padding: {
-              top: 32,
-              bottom: 32,
-              left: 10,
-            },
-          },
-          maintainAspectRatio: false,
-          title: {
-            display: true,
-            text: "STATUS",
-            fontSize: 25,
-          },
-          legend: {
-            display: true,
-            position: "top",
-          },
+          //   layout: {
+          //     padding: {
+          //       top: 32,
+          //       bottom: 32,
+          //       left: 10,
+          //     },
+          //   },
+          //   maintainAspectRatio: false,
+          //   title: {
+          //     display: true,
+          //     text: "STATUS",
+          //     fontSize: 25,
+          //   },
+          //   legend: {
+          //     display: true,
+          //     position: "top",
+          //   },
         }}
       />
     </div>
