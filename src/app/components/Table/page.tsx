@@ -15,7 +15,9 @@ export default function Table(props: any) {
   return (
     <div className="overflow-x-auto">
       <div className="flex ">
-        <div>Confirmed</div>
+        <div>
+          <div>Confirmed</div>
+        </div>
         <div>Recovered</div>
         <div>Active</div>
         <div>Death</div>
