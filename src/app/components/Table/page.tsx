@@ -18,7 +18,9 @@ export default function Table(props: any) {
         <div>
           <div>Confirmed</div>
         </div>
-        <div>Recovered</div>
+        <div>
+          <div>Recovered</div>
+        </div>
         <div>Active</div>
         <div>Death</div>
       </div>
