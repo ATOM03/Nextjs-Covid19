@@ -84,6 +84,9 @@ export default function Home() {
                   recovered={state.recovered}
                   active={state.active}
                   deaths={state.deaths}
+                  deltaconfirmed={state.deltaconfirmed}
+                  deltarecovered={state.deltarecovered}
+                  deltadeaths={state.deltadeaths}
                 />
                 <Pagination
                   totalPosts={state.status.length}
