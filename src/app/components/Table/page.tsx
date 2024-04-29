@@ -18,19 +18,19 @@ export default function Table(props: any) {
       <div className="flex justify-around ">
         <div>
           <div>Confirmed</div>
-          <div>{thousands_separators(props.confirmed)}</div>
+          <div className="mt-5">{thousands_separators(props.confirmed)}</div>
         </div>
         <div>
           <div>Recovered</div>
-          <div>{thousands_separators(props.recovered)}</div>
+          <div className="mt-5">{thousands_separators(props.recovered)}</div>
         </div>
         <div>
           <div>Active</div>
-          <div>{thousands_separators(props.active)}</div>
+          <div className="mt-5">{thousands_separators(props.active)}</div>
         </div>
         <div>
           <div>Death</div>
-          <div>{thousands_separators(props.deaths)}</div>
+          <div className="mt-5">{thousands_separators(props.deaths)}</div>
         </div>
       </div>
       <table className="table">
