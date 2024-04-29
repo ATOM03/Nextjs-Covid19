@@ -9,6 +9,7 @@ import { useRecoilState } from "recoil";
 import { CovidState } from "./components/State/atoms/CovidState";
 import Chart from "./components/Chart/page";
 import { motion } from "framer-motion";
+import { stat } from "fs";
 
 export default function Home() {
   const [state, setState] = useRecoilState(CovidState);
@@ -77,7 +78,13 @@ export default function Home() {
           >
             <div className="w-full flex flex-col md:flex-row ">
               <div className="w-full md:w-1/2">
-                <Table status={currentPosts} />
+                <Table
+                  status={currentPosts}
+                  confirmed={state.confirmed}
+                  recovered={state.recovered}
+                  active={state.active}
+                  deaths={state.deaths}
+                />
                 <Pagination
                   totalPosts={state.status.length}
                   postsPerPage={postsPerPage}

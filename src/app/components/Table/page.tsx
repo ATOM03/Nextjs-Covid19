@@ -10,19 +10,28 @@ export default function Table(props: any) {
   };
 
   const status = props.status;
+
   // console.log(status);
 
   return (
     <div className="overflow-x-auto">
-      <div className="flex ">
+      <div className="flex justify-around ">
         <div>
           <div>Confirmed</div>
+          <div>{thousands_separators(props.confirmed)}</div>
         </div>
         <div>
           <div>Recovered</div>
+          <div>{thousands_separators(props.recovered)}</div>
         </div>
-        <div>Active</div>
-        <div>Death</div>
+        <div>
+          <div>Active</div>
+          <div>{thousands_separators(props.active)}</div>
+        </div>
+        <div>
+          <div>Death</div>
+          <div>{thousands_separators(props.deaths)}</div>
+        </div>
       </div>
       <table className="table">
         <thead>
