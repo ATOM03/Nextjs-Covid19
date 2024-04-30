@@ -6,10 +6,11 @@ export default function Table(props: any) {
   const thousands_separators = (num: any) => {
     var num_parts = num.toString().split(".");
     num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return num_parts.join(".");
+    return "" + num_parts.join(".");
   };
 
   const status = props.status;
+  const confirmed = props.confirmed;
 
   // console.log(status);
 
@@ -18,28 +19,16 @@ export default function Table(props: any) {
       <div className="flex justify-around ">
         <div>
           <div>Confirmed</div>
-          <div className="mt-5">
-            [ + {thousands_separators(props.deltaconfirmed)} ]
-          </div>
-          <div className="mt-2">{thousands_separators(props.confirmed)}</div>
+          {/* <div>{thousands_separators(confirmed)}</div> */}
         </div>
         <div>
           <div>Recovered</div>
-          <div className="mt-5">
-            [ + {thousands_separators(props.deltarecovered)} ]
-          </div>
-          <div className="mt-2">{thousands_separators(props.recovered)}</div>
         </div>
         <div>
           <div>Active</div>
-          <div className="mt-14">{thousands_separators(props.active)}</div>
         </div>
         <div>
           <div>Death</div>
-          <div className="mt-5">
-            [ + {thousands_separators(props.deltadeaths)} ]
-          </div>
-          <div className="mt-2">{thousands_separators(props.deaths)}</div>
         </div>
       </div>
       <table className="table">
