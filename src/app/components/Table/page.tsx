@@ -14,7 +14,11 @@ export default function Table(props: any) {
   const active = props && props.active ? props.active : 0;
   const recovered = props && props.recovered ? props.recovered : 0;
   const deaths = props && props.deaths ? props.deaths : 0;
-
+  const deltaconfirmed =
+    props && props.deltaconfirmed ? props.deltaconfirmed : 0;
+  const deltarecovered =
+    props && props.deltarecovered ? props.deltarecovered : 0;
+  const deltadeaths = props && props.deltadeaths ? props.deltadeaths : 0;
   // console.log(status);
 
   return (
@@ -22,10 +26,12 @@ export default function Table(props: any) {
       <div className="flex justify-around ">
         <div>
           <div>Confirmed </div>
+          <div>[+{thousands_separators(deltaconfirmed)} ]</div>
           <div>{thousands_separators(confirmed)}</div>
         </div>
         <div>
           <div>Recovered</div>
+          <div>[+{thousands_separators(deltarecovered)} ]</div>
           <div>{thousands_separators(recovered)}</div>
         </div>
         <div>
@@ -34,6 +40,7 @@ export default function Table(props: any) {
         </div>
         <div>
           <div>Death</div>
+          <div>[+{thousands_separators(deltadeaths)} ]</div>
           <div>{thousands_separators(deaths)}</div>
         </div>
       </div>
