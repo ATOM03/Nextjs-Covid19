@@ -10,7 +10,10 @@ export default function Table(props: any) {
   };
 
   const status = props.status;
-  const confirmed = props.confirmed;
+  const confirmed = props && props.confirmed ? props.confirmed : 0;
+  const active = props && props.active ? props.active : 0;
+  const recovered = props && props.recovered ? props.recovered : 0;
+  const deaths = props && props.deaths ? props.deaths : 0;
 
   // console.log(status);
 
@@ -19,16 +22,19 @@ export default function Table(props: any) {
       <div className="flex justify-around ">
         <div>
           <div>Confirmed </div>
-          {/* <div>{thousands_separators(confirmed)}</div> */}
+          <div>{thousands_separators(confirmed)}</div>
         </div>
         <div>
           <div>Recovered</div>
+          <div>{thousands_separators(recovered)}</div>
         </div>
         <div>
           <div>Active</div>
+          <div>{thousands_separators(active)}</div>
         </div>
         <div>
           <div>Death</div>
+          <div>{thousands_separators(deaths)}</div>
         </div>
       </div>
       <table className="table">
