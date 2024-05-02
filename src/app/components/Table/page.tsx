@@ -35,7 +35,7 @@ export default function Table(props: any) {
           <div>{thousands_separators(recovered)}</div>
         </div>
         <div>
-          <div>Active</div>
+          <div>Active </div>
           <div className="">{thousands_separators(active)}</div>
         </div>
         <div>
