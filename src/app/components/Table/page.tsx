@@ -25,7 +25,7 @@ export default function Table(props: any) {
     <div className="overflow-x-auto">
       <div className="flex justify-around ">
         <div>
-          <div>Confirmed </div>
+          <div>Confirmed</div>
           <div>[+{thousands_separators(deltaconfirmed)} ]</div>
           <div>{thousands_separators(confirmed)}</div>
         </div>
