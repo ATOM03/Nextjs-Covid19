@@ -30,7 +30,7 @@ export default function Table(props: any) {
           <div>{thousands_separators(confirmed)}</div>
         </div>
         <div>
-          <div>Recovered</div>
+          <div>Recovered </div>
           <div className="">[+{thousands_separators(deltarecovered)} ]</div>
           <div>{thousands_separators(recovered)}</div>
         </div>
