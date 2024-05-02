@@ -26,22 +26,22 @@ export default function Table(props: any) {
       <div className="flex justify-around ">
         <div>
           <div>Confirmed</div>
-          <div>[+{thousands_separators(deltaconfirmed)} ]</div>
+          <div className="">[+{thousands_separators(deltaconfirmed)} ]</div>
           <div>{thousands_separators(confirmed)}</div>
         </div>
         <div>
           <div>Recovered</div>
-          <div>[+{thousands_separators(deltarecovered)} ]</div>
+          <div className="">[+{thousands_separators(deltarecovered)} ]</div>
           <div>{thousands_separators(recovered)}</div>
         </div>
         <div>
           <div>Active</div>
-          <div>{thousands_separators(active)}</div>
+          <div className="">{thousands_separators(active)}</div>
         </div>
         <div>
           <div>Death</div>
-          <div>[+{thousands_separators(deltadeaths)} ]</div>
-          <div>{thousands_separators(deaths)}</div>
+          <div className="">[+{thousands_separators(deltadeaths)} ]</div>
+          <div className="">{thousands_separators(deaths)}</div>
         </div>
       </div>
       <table className="table">
