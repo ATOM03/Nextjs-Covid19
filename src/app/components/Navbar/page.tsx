@@ -47,24 +47,6 @@ export default function Navbar() {
                 type="radio"
                 name="theme-dropdown"
                 className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Cyberpunk"
-                value="cyberpunk"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Aqua"
-                value="aqua"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                 aria-label="Dim"
                 value="dim"
               />

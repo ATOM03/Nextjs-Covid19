@@ -1,6 +1,7 @@
 "use client";
 
 import { Key } from "react";
+import { motion } from "framer-motion";
 
 export default function Table(props: any) {
   const thousands_separators = (num: any) => {
@@ -23,27 +24,40 @@ export default function Table(props: any) {
 
   return (
     <div className="overflow-x-auto">
-      <div className="flex justify-around ">
-        <div>
-          <div>Confirmed</div>
-          <div className="">[+{thousands_separators(deltaconfirmed)} ]</div>
-          <div>{thousands_separators(confirmed)}</div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ ease: "easeOut", duration: 1.5 }}
+        className="flex justify-around "
+      >
+        <div className="flex flex-col items-center">
+          <h5>Confirmed</h5>
+          <h4 className="">[+{thousands_separators(deltaconfirmed)} ]</h4>
+          <h1 className="text-2xl font-semibold tracking-wider">
+            {thousands_separators(confirmed)}
+          </h1>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           <div>Recovered </div>
           <div className="">[+{thousands_separators(deltarecovered)} ]</div>
-          <div>{thousands_separators(recovered)}</div>
+          <h1 className="text-2xl font-semibold tracking-wider">
+            {thousands_separators(recovered)}
+          </h1>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           <div>Active </div>
-          <div className="">{thousands_separators(active)}</div>
+          <h1 className="text-2xl font-semibold tracking-wider">
+            {thousands_separators(active)}
+          </h1>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           <div>Death</div>
           <div className="">[+{thousands_separators(deltadeaths)} ]</div>
-          <div className="">{thousands_separators(deaths)}</div>
+          <h1 className="text-2xl font-semibold tracking-wider">
+            {thousands_separators(deaths)}
+          </h1>
         </div>
-      </div>
+      </motion.div>
       <table className="table">
         <thead>
           <tr>

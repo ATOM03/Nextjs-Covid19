@@ -17,7 +17,7 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["dim", "retro", "cyberpunk", "aqua"],
+    themes: ["dim", "retro"],
   },
 };
 export default config;
