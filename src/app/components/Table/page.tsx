@@ -32,27 +32,28 @@ export default function Table(props: any) {
       >
         <div className="flex flex-col items-center">
           <h5>Confirmed</h5>
-          <h4 className="">[+{thousands_separators(deltaconfirmed)} ]</h4>
+          <h4 className="mt-5">[+{thousands_separators(deltaconfirmed)} ]</h4>
           <h1 className="text-2xl font-semibold tracking-wider">
             {thousands_separators(confirmed)}
           </h1>
         </div>
         <div className="flex flex-col items-center">
           <div>Recovered </div>
-          <div className="">[+{thousands_separators(deltarecovered)} ]</div>
+          <div className="mt-5">[+{thousands_separators(deltarecovered)} ]</div>
           <h1 className="text-2xl font-semibold tracking-wider">
             {thousands_separators(recovered)}
           </h1>
         </div>
         <div className="flex flex-col items-center">
           <div>Active </div>
+          <div className="mt-11"></div>
           <h1 className="text-2xl font-semibold tracking-wider">
             {thousands_separators(active)}
           </h1>
         </div>
         <div className="flex flex-col items-center">
           <div>Death</div>
-          <div className="">[+{thousands_separators(deltadeaths)} ]</div>
+          <div className="mt-5">[+{thousands_separators(deltadeaths)} ]</div>
           <h1 className="text-2xl font-semibold tracking-wider">
             {thousands_separators(deaths)}
           </h1>
