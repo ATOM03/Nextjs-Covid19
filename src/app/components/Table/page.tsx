@@ -32,8 +32,10 @@ export default function Table(props: any) {
       >
         <div className="flex flex-col items-center">
           <h5>Confirmed</h5>
-          <h4 className="mt-5">[+{thousands_separators(deltaconfirmed)} ]</h4>
-          <h1 className="text-xl font-semibold tracking-wider  md:text-2xl">
+          <h4 className="mt-5 text-red-500">
+            [+{thousands_separators(deltaconfirmed)} ]
+          </h4>
+          <h1 className="text-xl text-red-600 font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(confirmed)}
           </h1>
         </div>
