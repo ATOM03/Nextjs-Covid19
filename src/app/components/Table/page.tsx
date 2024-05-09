@@ -31,18 +31,20 @@ export default function Table(props: any) {
         className="flex justify-around "
       >
         <div className="flex flex-col items-center">
-          <h5>Confirmed</h5>
+          <h5 className="text-red-500">Confirmed</h5>
           <h4 className="mt-5 text-red-500">
             [+{thousands_separators(deltaconfirmed)} ]
           </h4>
-          <h1 className="text-xl text-red-600 font-semibold tracking-wider  md:text-2xl">
+          <h1 className="text-xl text-red-700 font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(confirmed)}
           </h1>
         </div>
         <div className="flex flex-col items-center">
-          <div>Recovered </div>
-          <div className="mt-5">[+{thousands_separators(deltarecovered)} ]</div>
-          <h1 className="text-xl font-semibold tracking-wider  md:text-2xl">
+          <div className="text-green-500">Recovered </div>
+          <div className="mt-5 text-green-600">
+            [+{thousands_separators(deltarecovered)} ]
+          </div>
+          <h1 className="text-xl text-green-700 font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(recovered)}
           </h1>
         </div>
