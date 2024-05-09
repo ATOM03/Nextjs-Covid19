@@ -31,8 +31,8 @@ export default function Table(props: any) {
         className="flex justify-around "
       >
         <div className="flex flex-col items-center">
-          <h5 className="text-red-500">Confirmed</h5>
-          <h4 className="mt-5 text-red-500">
+          <h5 className="text-red-500 font-bold">Confirmed</h5>
+          <h4 className="mt-5 text-red-500 font-medium">
             [+{thousands_separators(deltaconfirmed)} ]
           </h4>
           <h1 className="text-xl text-red-700 font-semibold tracking-wider  md:text-2xl">
@@ -40,8 +40,8 @@ export default function Table(props: any) {
           </h1>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-green-500">Recovered </div>
-          <div className="mt-5 text-green-600">
+          <div className="text-green-500 font-bold ">Recovered </div>
+          <div className="mt-5 text-green-600 font-medium">
             [+{thousands_separators(deltarecovered)} ]
           </div>
           <h1 className="text-xl text-green-700 font-semibold tracking-wider  md:text-2xl">
@@ -49,15 +49,17 @@ export default function Table(props: any) {
           </h1>
         </div>
         <div className="flex flex-col items-center">
-          <div>Active </div>
+          <div className="text-blue-500 font-bold">Active </div>
           <div className="mt-11"></div>
-          <h1 className="text-xl font-semibold tracking-wider  md:text-2xl">
+          <h1 className="text-xl text-blue-700 font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(active)}
           </h1>
         </div>
         <div className="flex flex-col items-center">
-          <div>Death</div>
-          <div className="mt-5">[+{thousands_separators(deltadeaths)} ]</div>
+          <div className="font-bold">Death</div>
+          <div className="mt-5 font-medium">
+            [+{thousands_separators(deltadeaths)} ]
+          </div>
           <h1 className="text-xl font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(deaths)}
           </h1>
