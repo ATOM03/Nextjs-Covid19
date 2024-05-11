@@ -60,7 +60,7 @@ export default function Table(props: any) {
           <div className="mt-5 font-medium">
             [+{thousands_separators(deltadeaths)} ]
           </div>
-          <h1 className="text-xl  font-semibold tracking-wider  md:text-2xl">
+          <h1 className="text-xl font-semibold tracking-wider  md:text-2xl">
             {thousands_separators(deaths)}
           </h1>
         </div>
