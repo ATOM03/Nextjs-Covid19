@@ -95,7 +95,7 @@ export default function Home() {
                   currentPage={currentPage}
                 />
               </div>
-              <div className="w-full p-4 md:w-1/2">
+              <div className="w-full  p-4 md:w-1/2">
                 <Chart chartdata={state.case_time} />
               </div>
             </div>
