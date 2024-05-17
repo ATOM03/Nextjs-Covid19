@@ -48,7 +48,7 @@ export default function Table(props: any) {
             {thousands_separators(recovered)}
           </h1>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex  flex-col items-center">
           <div className="text-blue-500 font-bold">Active </div>
           <div className="mt-11"></div>
           <h1 className="text-xl text-blue-700 font-semibold tracking-wider  md:text-2xl">
